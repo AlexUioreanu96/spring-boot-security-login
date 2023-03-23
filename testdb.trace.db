@@ -144,7 +144,7 @@ org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.bezkoder.spring.security.login.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
+	at com.alex.demo.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]" [50000-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
@@ -245,7 +245,7 @@ org.h2.message.DbException: Unsupported database file version or invalid file he
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.bezkoder.spring.security.login.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
+	at com.alex.demo.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Unsupported database file version or invalid file header in file "D:/Projects/Spring/spring-boot-security-login/testdb.mv.db" [90048-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
@@ -410,7 +410,7 @@ org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.bezkoder.spring.security.login.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
+	at com.alex.demo.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]" [50000-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
@@ -568,7 +568,7 @@ org.h2.message.DbException: Unsupported database file version or invalid file he
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.bezkoder.spring.security.login.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
+	at com.alex.demo.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Unsupported database file version or invalid file header in file "D:/Projects/Spring/spring-boot-security-login/testdb.mv.db" [90048-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
@@ -732,7 +732,7 @@ org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.bezkoder.spring.security.login.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
+	at com.alex.demo.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]" [50000-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
@@ -889,7 +889,7 @@ org.h2.message.DbException: Unsupported database file version or invalid file he
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.bezkoder.spring.security.login.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
+	at com.alex.demo.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Unsupported database file version or invalid file header in file "D:/Projects/Spring/spring-boot-security-login/testdb.mv.db" [90048-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
@@ -997,7 +997,7 @@ org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.bezkoder.spring.security.login.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
+	at com.alex.demo.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]" [50000-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
@@ -1098,7 +1098,7 @@ org.h2.message.DbException: Unsupported database file version or invalid file he
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.bezkoder.spring.security.login.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
+	at com.alex.demo.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Unsupported database file version or invalid file header in file "D:/Projects/Spring/spring-boot-security-login/testdb.mv.db" [90048-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
@@ -1263,7 +1263,7 @@ org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.bezkoder.spring.security.login.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
+	at com.alex.demo.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]" [50000-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
@@ -1421,7 +1421,7 @@ org.h2.message.DbException: Unsupported database file version or invalid file he
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.bezkoder.spring.security.login.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
+	at com.alex.demo.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Unsupported database file version or invalid file header in file "D:/Projects/Spring/spring-boot-security-login/testdb.mv.db" [90048-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
@@ -1585,7 +1585,7 @@ org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.bezkoder.spring.security.login.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
+	at com.alex.demo.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]" [50000-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
@@ -1742,7 +1742,7 @@ org.h2.message.DbException: Unsupported database file version or invalid file he
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.bezkoder.spring.security.login.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
+	at com.alex.demo.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Unsupported database file version or invalid file header in file "D:/Projects/Spring/spring-boot-security-login/testdb.mv.db" [90048-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
@@ -1848,7 +1848,7 @@ org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.bezkoder.spring.security.login.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
+	at com.alex.demo.SpringBootSecurityLoginApplication.main(SpringBootSecurityLoginApplication.java:10)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/alexuioreanu/Downloads/spring-boot-security-login/testdb.mv.db [2.1.214/7]" [50000-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
