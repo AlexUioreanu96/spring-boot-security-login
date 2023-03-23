@@ -1,6 +1,13 @@
 package com.bezkoder.spring.security.login.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -14,6 +21,9 @@ import javax.validation.constraints.Size;
            @UniqueConstraint(columnNames = "username"),
            @UniqueConstraint(columnNames = "email")
        })
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,12 +35,15 @@ public class User {
 
   @NotBlank
   @Size(max = 50)
-  @Email
   private String email;
 
   @NotBlank
   @Size(max = 120)
   private String password;
+
+  @OneToMany(mappedBy = "user1", cascade = CascadeType.ALL, orphanRemoval = true)
+  @JsonIgnore
+  private List<Order> orders = new ArrayList<>();
 
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "user_roles", 
@@ -38,13 +51,15 @@ public class User {
              inverseJoinColumns = @JoinColumn(name = "role_id"))
   private Set<Role> roles = new HashSet<>();
 
-  public User() {
+  public void removeOrder(Order order) {
+    orders.remove(order);
+  }
+  public List<Order> getOrders() {
+    return orders;
   }
 
-  public User(String username, String email, String password) {
-    this.username = username;
-    this.email = email;
-    this.password = password;
+  public void setOrders(List<Order> orders) {
+    this.orders = orders;
   }
 
   public Long getId() {

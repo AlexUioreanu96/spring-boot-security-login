@@ -1,21 +1,25 @@
 package com.bezkoder.spring.security.login.controllers;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import com.bezkoder.spring.security.login.models.Order;
+//import com.bezkoder.spring.security.login.security.jwt.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.authentication.AuthenticationManager;
+//import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+//import org.springframework.security.core.Authentication;
+//import org.springframework.security.core.context.SecurityContextHolder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,15 +35,14 @@ import com.bezkoder.spring.security.login.payload.response.UserInfoResponse;
 import com.bezkoder.spring.security.login.payload.response.MessageResponse;
 import com.bezkoder.spring.security.login.repository.RoleRepository;
 import com.bezkoder.spring.security.login.repository.UserRepository;
-import com.bezkoder.spring.security.login.security.jwt.JwtUtils;
-import com.bezkoder.spring.security.login.security.services.UserDetailsImpl;
+//import com.bezkoder.spring.security.login.security.jwt.JwtUtils;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins ="http://localhost:5173")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
-  @Autowired
-  AuthenticationManager authenticationManager;
+//  @Autowired
+//  AuthenticationManager authenticationManager;
 
   @Autowired
   UserRepository userRepository;
@@ -47,34 +50,44 @@ public class AuthController {
   @Autowired
   RoleRepository roleRepository;
 
-  @Autowired
-  PasswordEncoder encoder;
+//  @Autowired
+//  PasswordEncoder encoder;
 
-  @Autowired
-  JwtUtils jwtUtils;
+//  @Autowired
+//  JwtUtils jwtUtils;
 
+//  @PostMapping("/signin")
+//  public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest, HttpServletResponse response) {
+//    Authentication authentication = authenticationManager.authenticate(
+//            new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
+//
+//    SecurityContextHolder.getContext().setAuthentication(authentication);
+//    UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+//    ResponseCookie jwtCookie = jwtUtils.generateJwtCookie(userDetails);
+//
+//    response.addCookie(jwtCookie.);
+//    return  ResponseEntity.ok().header(HttpHeaders.COOKIE, jwtCookie.toString())
+//            .body(new UserInfoResponse(userDetails.getUsername(),jwtCookie.toString()));
+//  }
   @PostMapping("/signin")
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+//
+//    Authentication authentication = authenticationManager
+//        .authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
+//
+//    SecurityContextHolder.getContext().setAuthentication(authentication);
+//
+//    UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+//
+//    ResponseCookie jwtCookie = jwtUtils.generateJwtCookie(userDetails);
+//
+//    List<String> roles = userDetails.getAuthorities().stream()
+//        .map(item -> item.getAuthority())
+//        .collect(Collectors.toList());
 
-    Authentication authentication = authenticationManager
-        .authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
-
-    SecurityContextHolder.getContext().setAuthentication(authentication);
-
-    UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
-
-    ResponseCookie jwtCookie = jwtUtils.generateJwtCookie(userDetails);
-
-    List<String> roles = userDetails.getAuthorities().stream()
-        .map(item -> item.getAuthority())
-        .collect(Collectors.toList());
-
-    return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, jwtCookie.toString())
-        .body(new UserInfoResponse(userDetails.getId(),
-                                   userDetails.getUsername(),
-                                   userDetails.getEmail(),
-                                   roles));
+    return ResponseEntity.ok().body(loginRequest.getUsername());
   }
+
 
   @PostMapping("/signup")
   public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
@@ -87,9 +100,17 @@ public class AuthController {
     }
 
     // Create new user's account
-    User user = new User(signUpRequest.getUsername(),
-                         signUpRequest.getEmail(),
-                         encoder.encode(signUpRequest.getPassword()));
+    User user = User.builder().username(signUpRequest.getUsername()).email(signUpRequest.getEmail()).password(signUpRequest.getPassword()).build();
+    List<Order> orders = new ArrayList<>();
+    Order order1 = Order.builder().user1(user).description("French fries with eqqs cost:10$").build();
+    Order order2 = Order.builder().user1(user).description("Spaghetti with meat cost:20$").build();
+    Order order3 = Order.builder().user1(user).description("Argentinean Beef with fries cost:100$").build();
+
+    orders.add(order1);
+    orders.add(order2);
+    orders.add(order3);
+
+    user.setOrders(orders);
 
     Set<String> strRoles = signUpRequest.getRole();
     Set<Role> roles = new HashSet<>();
@@ -129,8 +150,8 @@ public class AuthController {
 
   @PostMapping("/signout")
   public ResponseEntity<?> logoutUser() {
-    ResponseCookie cookie = jwtUtils.getCleanJwtCookie();
-    return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, cookie.toString())
+//    ResponseCookie cookie = jwtUtils.getCleanJwtCookie();
+    return ResponseEntity.ok()
         .body(new MessageResponse("You've been signed out!"));
   }
 }
